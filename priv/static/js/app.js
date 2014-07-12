@@ -1,6 +1,6 @@
 var journals = [];
 var ractive = new Ractive({
-  el: 'ractive',
+    el: 'ractive',
     template: '#template',
     data: { name: 'world',
       journals: journals
@@ -45,6 +45,8 @@ function addJournal() {
 function showJournals() {
   db.allDocs({include_docs: true, descending: true}, function(err, doc) {
     // redrawUI(doc.rows);
+    journals = doc.rows;
+    ractive.set('journals', journals);
   });
 }
 

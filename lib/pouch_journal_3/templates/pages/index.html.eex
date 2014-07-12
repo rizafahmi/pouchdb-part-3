@@ -4,9 +4,6 @@
 <button type="submit" onclick="addJournal()">Save</button>
 
 
-<ul id="journal-list">
-
-</ul>
 
 
 <div id="ractive">
@@ -15,5 +12,10 @@
 </div>
 
 <script id='template' type='text/ractive'>
-  <h2>Hello, {{name}}</h2>
+  <h3>{{name}}</h3>
+  <ul id="journal-list">
+    {{#journals}}
+      <li>{{doc.title}} - {{doc.text}}</li>
+    {{/journals}}
+  </ul>
 </script>
