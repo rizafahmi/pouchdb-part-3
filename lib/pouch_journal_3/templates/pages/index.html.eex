@@ -12,7 +12,6 @@
 </div>
 
 <script id='template' type='text/ractive'>
-  <h3>{{name}}</h3>
   <ul id="journal-list">
     {{#journals}}
       <li>{{doc.title}} - {{doc.text}}</li>
